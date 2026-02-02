@@ -17,4 +17,13 @@ class Team(
 
     @OneToMany(mappedBy = "team")
     var members: MutableList<Member> = mutableListOf()
-)
+) {
+    /** 순환참조로 무한루프 발생 */
+//    override fun toString(): String {
+//        return "Team(id=$id, name='$name', member ids=$members)"
+//    }
+
+    override fun toString(): String {
+        return "Team(id=$id, name='$name', member ids=${members.map { it.id }})"
+    }
+}

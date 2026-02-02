@@ -18,4 +18,8 @@ class Member(
     @ManyToOne
     @JoinColumn(name = "team_id")
     var team: Team? = null,
-)
+) {
+    override fun toString(): String {
+        return "Member(id=$id, name='$name', team=$team)"
+    }
+}
