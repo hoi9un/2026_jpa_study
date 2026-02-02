@@ -13,8 +13,7 @@ fun homework1() {
     val em = emf.createEntityManager()
     val tx = em.transaction
 
-    println("=== 숙제 1: @JoinColumn 유무에 따른 일대다 단방향 동작 차이 ===")
-    println("=== 현재 @JoinColumn 주석 상태 확인 후 실행 ===")
+    println("=== 과제 1: @JoinColumn 유무에 따른 일대다 단방향 동작 차이 ===")
 
     try {
         tx.begin()
