@@ -1,9 +1,9 @@
-package homework.chapter_6.homework2;
+package homework.chapter_6.homework2.homework2_eager;
 
 import jakarta.persistence.*;
 
-@Entity(name = "Hw2Member")
-@Table(name = "member_hw2")
+@Entity(name = "Hw2EagerMember")
+@Table(name = "member_hw2_eager")
 public class Member {
 
     @Id
@@ -13,11 +13,15 @@ public class Member {
 
     private String name;
 
-    @OneToOne  // ← fetch = FetchType.LAZY 추가해서 지연 로딩 확인!
+    @OneToOne  // 기본값 = EAGER
     @JoinColumn(name = "locker_id")
     private Locker locker;
 
     protected Member() {
+    }
+
+    public Member(String name) {
+        this.name = name;
     }
 
     public Long getId() {
